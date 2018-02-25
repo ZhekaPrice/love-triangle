@@ -3,5 +3,15 @@
  * @returns number of love triangles
  */
 module.exports = function getLoveTrianglesCount(preferences = []) {
-  // your implementation
+  var numberOfTreug = 0, first, second, third ;
+  for (i = 0; i < preferences.length; i++)
+  {
+    first = preferences[i];
+    second = first - 1;
+    third = preferences[second]-1;
+    if ((third !== -1) && (third + 1 == second ))
+      numberOfTreug++;
+  };
+  numberOfTreug /= 3;
+  return numberOfTreug;
 };
